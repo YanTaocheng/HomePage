@@ -1,0 +1,97 @@
+body{
+/*background-image:url("{% static 'image/background_1.jpg' %}"); */
+background-color:#F0FFFF;
+background-size:cover;
+}
+
+img{
+width:50px;
+height:50px;
+
+}
+
+
+div{
+text-align:center;
+font-family:"隶书";
+font-size:30px
+}
+
+#div1{
+	color:blue;
+	font-family:"黑体";
+	font-size:2.5em;
+	
+}
+
+#p1{
+position:absolute;
+left:30%;
+top:30%;
+display:none;
+}
+
+#p2{
+position:absolute;
+left:60%;
+top:30%;
+display:none;
+}
+
+#p3{
+position:absolute;
+left:30%;
+top:60%;
+display:none;	
+}
+
+#p4{
+position:absolute;
+left:60%;
+top:60%;
+display:none;
+}
+#p5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+display:none;
+}
+
+.center-in-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.text{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+    -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+    -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+    -webkit-background-size: 200% 100%; 
+    -webkit-animation: masked-animation 4s linear infinite;
+    font-size: 35px;
+}
+@keyframes masked-animation {
+    0% {
+        background-position: 0  0;
+    }
+    100% {
+        background-position: -100%  0;
+    }
+}

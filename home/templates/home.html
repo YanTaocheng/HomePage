@@ -1,99 +1,63 @@
 <html>
 
 <head>
-<meta charset="UTF-8">
-<style type="text/css">
-body{
 {% load staticfiles %}
-/*background-image:url("{% static 'image/background_1.jpg' %}"); */
-background-color:#F0FFFF;
-background-size:cover;
-}
-
-img{
-width:50px;
-height:50px;
-
-}
-
-
-p{
-text-transform:uppercase;
-text-indent:50px;
-}
-
-div{
-text-align:center;
-font-family:"隶书";
-font-size:30px
-}
-
-#div1:hover{
-color:#FF00FF;
-}
-
-.center-in-center{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-.text{
-    width: 300px;
-    height: 200px;
-    position: absolute;
-    left: 50%;
-    margin-left: -150px;
-    background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
-    -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
-    -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
-    -webkit-background-size: 200% 100%; 
-    -webkit-animation: masked-animation 4s linear infinite;
-    font-size: 35px;
-}
-@keyframes masked-animation {
-    0% {
-        background-position: 0  0;
-    }
-    100% {
-        background-position: -100%  0;
-    }
-}
-</style>
+<meta charset="UTF-8">
+<link rel="stylesheet" href={% static 'css/home.css' %}>
 <link rel="shortcut icon" href={% static 'image/icon.png' %} type="image/x-icon"/>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{%static 'js/jquery.min.js'%}"></script>
 <title>taocheng.yan</title>
+
 </head>
 
-
 <body>
+<div class="text" >欢迎，{{name}} 来到召唤师峡谷~</div>
 
-</body>
+<button id="hide">隐藏</button>
+<button id="show">出现</button>
+<button id="show2">回放</button>
+<img></img>
 
-<div id='div1' class='center-in-center'>Have a happy Day~</div>
+
+<div id='div1'>
+<p id="p1" class="words">我是谁？</p>
+<p id="p2" class="words">我在哪？</p>
+<p id="p3" class="words">我想干嘛？</p>
+<p id="p4" class="words">我怎么了？</p>
+<p id="p5" class="words">啊啊啊啊啊！</p>
+</div>
+
 
 <script type="text/javascript">
-var strarr=['此去经年','硬是良辰美景虚设','便纵有千种风情','更与何人说'];
+/*var strarr=['此去经年','硬是良辰美景虚设','便纵有千种风情','更与何人说'];
 var index=0;
 setInterval(function(){
 if(index>=strarr.length) index=0;
 var div1=document.getElementById('div1');
 div1.innerHTML=strarr[index];
 index+=1;
-},1000)
+},1000)*/
+
+$("#show2").click(function(){
+    index=0
+})
+
+var index=0;
+var arr = ["#p1", "#p2", "#p3", "#p4", "#p5"];
+setInterval(function(){
+
+if(index>=arr.length) index=0;
+$(".words").hide();
+$(arr[index]).show(); 
+
+index += 1;
+
+
+}, 1000)
+
 </script>
 
-欢迎，<a href={% url 'next' %}>{{name}}</a>
-<div class="text" >欢迎，{{name}}</div>
 
-<button id="hide">隐藏</button>
-<button id="show">出现</button>
-<img></img>
 
 <script>
 $("#hide").click(function(){
@@ -117,4 +81,5 @@ $("img").click(function() {
     index += 1;
 })
 </script>
+</body>
 </html>
