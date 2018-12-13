@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+body{
+{% load staticfiles %}
+/*background-image:url("{% static 'image/background_1.jpg' %}"); */
+background-color:#F0FFFF;
+background-size:cover;
+}
+
+a{text-decoration:overline;}
+
+p{
+text-transform:uppercase;
+text-indent:50px;
+}
+
+div{
+text-align:center;
+font-family:"隶书";
+font-size:30px
+}
+
+.center-in-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.text{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+    -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+    -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+    -webkit-background-size: 200% 100%; 
+    -webkit-animation: masked-animation 4s linear infinite;
+    font-size: 35px;
+}
+@keyframes masked-animation {
+    0% {
+        background-position: 0  0;
+    }
+    100% {
+        background-position: -100%  0;
+    }
+}
+</style>
+<link rel="shortcut icon" href={% static 'image/icon.png' %} type="image/x-icon"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<title>taocheng.yan</title>
+</head>
+
+
+<body>
+
+</body>
+
+<div id='div1' class='center-in-center'>Have a happy Day~</div>
+
+<script type="text/javascript">
+var strarr=['严桃成','生日快乐'];
+var index=0;
+setInterval(function(){
+if(index>=strarr.length) index=0;
+var div1=document.getElementById('div1');
+div1.innerHTML=strarr[index];
+index+=1;
+},1000)
+</script>
+
+欢迎，<a href={% url 'next' %}>{{name}}</a>
+<div class="text" >欢迎，{{name}}</div>
+<p>dshkdwiew</p>
+
+<script>
+</script>
+</html>

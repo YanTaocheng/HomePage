@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<meta charset="UTF-8">
+<style type="text/css">
+body{
+{% load staticfiles %}
+background-image:url("{% static 'image/background_2.jpg' %}");
+background-size:cover;
+}
+</style>
+</head>
+
+<body>
+<p>this is next</p>
+
+
+<script>
+$(document).ready(function(){
+    $("p").dblclick(function(){
+        $("p").hide();
+    });
+});
+</script>
+a:<input type="text" id="a" value="hha"></br>
+b:<input type="text" id="b"></input> </br>
+c:<input type="text" id="c"></input> </br>
+<button onclick="submi1()">点击</button>
+<button id="x">11</button>
+</body>
+</html>
