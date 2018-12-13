@@ -10,7 +10,12 @@ background-color:#F0FFFF;
 background-size:cover;
 }
 
-a{text-decoration:overline;}
+img{
+width:50px;
+height:50px;
+background-size:cover;
+}
+
 
 p{
 text-transform:uppercase;
@@ -21,6 +26,10 @@ div{
 text-align:center;
 font-family:"隶书";
 font-size:30px
+}
+
+#div1:hover{
+color:#FF00FF;
 }
 
 .center-in-center{
@@ -69,7 +78,7 @@ font-size:30px
 <div id='div1' class='center-in-center'>Have a happy Day~</div>
 
 <script type="text/javascript">
-var strarr=['严桃成','生日快乐'];
+var strarr=['此去经年','硬是良辰美景虚设','便纵有千种风情','更与何人说'];
 var index=0;
 setInterval(function(){
 if(index>=strarr.length) index=0;
@@ -81,8 +90,31 @@ index+=1;
 
 欢迎，<a href={% url 'next' %}>{{name}}</a>
 <div class="text" >欢迎，{{name}}</div>
-<p>dshkdwiew</p>
+
+<button id="hide">隐藏</button>
+<button id="show">出现</button>
+<img></img>
 
 <script>
+$("#hide").click(function(){
+    $(".text").hide();
+    $("#div1").hide();
+})
+
+$("#show").click(function(){
+    $(".text").show();
+    $("#div1").show();
+})
+
+var list = ["{% static 'image/img1.jpg' %}", "{% static 'image/fail.jpg' %}", "{% static 'image/icon.png' %}"];
+var index = 0;
+var num = Math.round(Math.random()*(list.length));
+$("img").attr("src", list[num]);
+$("img").click(function() {
+    
+    if(index>=list.length) index=0;
+    $(this).attr("src", list[index]);
+    index += 1;
+})
 </script>
 </html>
